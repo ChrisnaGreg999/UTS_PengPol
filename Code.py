@@ -49,13 +49,13 @@ for n in range(1,Ks):
 
 print(mean_acc)
 
-plt.plot(range(1,Ks),mean_acc,'g')
-plt.fill_between(range(1,Ks),mean_acc - 1 * std_acc,mean_acc + 1 * std_acc, alpha=0.10)
-plt.legend(('Accuracy ', '+/- 3xstd'))
-plt.ylabel('Accuracy ')
-plt.xlabel('Number of Nabors (K)')
-plt.tight_layout()
-plt.show()
+#plt.plot(range(1,Ks),mean_acc,'g')
+#plt.fill_between(range(1,Ks),mean_acc - 1 * std_acc,mean_acc + 1 * std_acc, alpha=0.10)
+#plt.legend(('Accuracy ', '+/- 3xstd'))
+#plt.ylabel('Accuracy ')
+#plt.xlabel('Number of Nabors (K)')
+#plt.tight_layout()
+#plt.show()
 
 k = 9
 #Train Model and Predict  
@@ -63,6 +63,7 @@ neigh = KNeighborsClassifier(n_neighbors = k).fit(X_train,Y_train)
 print(neigh)
 
 yhat = neigh.predict(X_test)
+print(yhat)
 
 print("Train set Accuracy: ", metrics.accuracy_score(Y_train, neigh.predict(X_train)))
 print("Test set Accuracy: ", metrics.accuracy_score(Y_test, yhat))
